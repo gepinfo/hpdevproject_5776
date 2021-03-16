@@ -69,7 +69,7 @@ spec:
           image: {{ .Values.deployment.student.image }}
           ports:
             - name: http-port
-              containerPort: 8005
+              containerPort: 8009
           env:
             - name: {{ .Values.app.prefix }}-app-db
               value: {{ .Values.app.prefix }}-app-db
@@ -81,7 +81,7 @@ spec:
           image: {{ .Values.deployment.department.image }}
           ports:
             - name: http-port
-              containerPort: 8006
+              containerPort: 8010
           env:
             - name: {{ .Values.app.prefix }}-app-db
               value: {{ .Values.app.prefix }}-app-db
@@ -93,7 +93,7 @@ spec:
           image: {{ .Values.deployment.college.image }}
           ports:
             - name: http-port
-              containerPort: 8007
+              containerPort: 8011
           env:
             - name: {{ .Values.app.prefix }}-app-db
               value: {{ .Values.app.prefix }}-app-db
@@ -105,7 +105,7 @@ spec:
           image: {{ .Values.deployment.place.image }}
           ports:
             - name: http-port
-              containerPort: 8008
+              containerPort: 8012
           env:
             - name: {{ .Values.app.prefix }}-app-db
               value: {{ .Values.app.prefix }}-app-db

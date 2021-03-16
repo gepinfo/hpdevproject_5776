@@ -57,26 +57,26 @@ service:
   student: 
     name: student
     type: NodePort
-    port: 8005
-    targetPort: 8005
+    port: 8009
+    targetPort: 8009
 
   department: 
     name: department
     type: NodePort
-    port: 8006
-    targetPort: 8006
+    port: 8010
+    targetPort: 8010
 
   college: 
     name: college
     type: NodePort
-    port: 8007
-    targetPort: 8007
+    port: 8011
+    targetPort: 8011
 
   place: 
     name: place
     type: NodePort
-    port: 8008
-    targetPort: 8008
+    port: 8012
+    targetPort: 8012
 
 
 deployment:
