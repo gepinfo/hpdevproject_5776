@@ -1,0 +1,43 @@
+<h2 class="screen-align">Createstudent</h2>
+<div id="template-ivzy" class="row">
+    <div id="template-ib32" class="cell">
+        <label id="template-ia0m" class="label">Name</label>
+        <input id="template-i2gp" placeholder="Enter name" [(ngModel)]="student.Name"
+        [ngModelOptions]="{standalone: true}" class="input form-control" />
+    </div>
+    <div id="template-iyd6" class="cell">
+        <label id="template-i4y2" class="label">Email</label>
+        <input id="template-iylg" placeholder="Enter email" [(ngModel)]="student.Email"
+        [ngModelOptions]="{standalone: true}" class="input form-control" />
+    </div>
+    <div id="template-iye5" class="cell">
+        <label id="template-ituw" class="label">Department</label>
+        <div id="template-ix2mt" class="">
+            <ng-select id="template-ilm2g" name="dynamicdropdown_template-ilm2g" [searchable]="true"
+            [virtualScroll]="true" [items]="departmentitemArray" bindLabel="departmentname"
+            bindValue="departmentname" [(ngModel)]="student.Department" [ngModelOptions]="{standalone: true}"
+            (click)="departmentGpGetAllValues()" class="form-control"></ng-select>
+        </div>
+    </div>
+</div>
+<div id="template-ig94w" class="row">
+    <div id="template-irijp" class="cell">
+        <label id="template-iqwx9" class="label">College</label>
+        <div id="template-i141m" class="">
+            <ng-select id="template-igmdm" name="dynamicdropdown_template-igmdm" [searchable]="true"
+            [virtualScroll]="true" [items]="collegeitemArray" bindLabel="collegename"
+            bindValue="collegename" [(ngModel)]="student.College" [ngModelOptions]="{standalone: true}"
+            (click)="collegeGpGetAllValues()" class="form-control"></ng-select>
+        </div>
+    </div>
+    <div id="template-i7hn1" class="cell">
+        <label id="template-iyjn8" class="label">Place</label>
+        <div id="template-idh9t" class="">
+            <ng-select id="template-ive26" name="dynamicdropdown_template-ive26" [searchable]="true"
+            [virtualScroll]="true" [items]="placeitemArray" bindLabel="placename" bindValue="placename"
+            [(ngModel)]="student.Place" [ngModelOptions]="{standalone: true}" (click)="placeGpGetAllValues()"
+            class="form-control"></ng-select>
+        </div>
+    </div>
+</div>
+<button id="template-i6t0c" (click)="GpCreate()" class="button btn btn-primary">Create</button>

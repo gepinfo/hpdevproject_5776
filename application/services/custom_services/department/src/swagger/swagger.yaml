@@ -1,0 +1,132 @@
+---
+openapi: 3.0.0
+info:
+   version: 1.3.0
+   title: hpdevproject open api specification
+   description: department API
+   termsOfService: http://api_url/terms/
+   contact:
+      name: ContactName
+      email: hello@wolox.co
+      url: https://www.wolox.com.ar/
+   license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+   - url: http://localhost:8006
+     description: department
+tags:
+- name: department
+paths:
+   "/department/{id}":
+      delete:
+         tags:
+         -  department
+         description: GpDelete
+         parameters:
+         -  in: "path"
+            description: GpDelete
+            name: id
+            required: true
+            schema:
+               type: "string"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/department/get/search":
+      get:
+         tags:
+         -  department
+         description: GpSearch
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/department":
+      put:
+         tags:
+         -  department
+         description: GpUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/department"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      get:
+         tags:
+         -  department
+         description: GpGetAllValues
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      post:
+         tags:
+         -  department
+         description: GpCreate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/department"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/department/get/update":
+      put:
+         tags:
+         -  department
+         description: GpSearchForUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/department"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+components:
+   schemas:
+      department:
+         type: object
+         properties:
+            departmentname:
+               type: "string"
+               description: Description
